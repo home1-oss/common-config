@@ -68,7 +68,7 @@ spring.h2.console:
 
 spring:
   rabbitmq:
-    host: ${SPRING_RABBITMQ_HOST:local-cloudbus}
+    host: ${SPRING_RABBITMQ_HOST:cloudbus.local}
     port: ${SPRING_RABBITMQ_PORT:5672}
     username: ${SPRING_RABBITMQ_USERNAME:user}
     password: ${SPRING_RABBITMQ_PASSWORD:user_pass}
@@ -78,10 +78,10 @@ none: none
 override-result: none
 eureka:
   instance:
-    hostname: ${EUREKA_INSTANCE_HOSTNAME:local-${spring.application.name}}
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:${spring.application.name}.local}
     nonSecurePort: ${EUREKA_INSTANCE_NONSECUREPORT:8080}
     prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP_ADDRESS:false}
-    instance-id: ${spring.application.name}:${EUREKA_INSTANCE_HOSTNAME:local-${spring.application.name}}:${EUREKA_INSTANCE_NONSECUREPORT:${SERVER_PORT:8080}}:${random.value}
+    instance-id: ${spring.application.name}:${EUREKA_INSTANCE_HOSTNAME:${spring.application.name}.local}:${EUREKA_INSTANCE_NONSECUREPORT:${SERVER_PORT:8080}}:${random.value}
     leaseRenewalIntervalInSeconds: 10
     statusPageUrlPath: ${server.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.info.path:/info}
     healthCheckUrlPath: ${server.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.health.path:/health}

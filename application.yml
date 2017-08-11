@@ -33,7 +33,7 @@ hystrix:
 logging.level.: ${LOGGING_LEVEL_:INFO}
 logging:
   file: ${LOGGING_FILE:${spring.application.name}}.log
-  path: ${LOGGING_PATH:${user.home}/data/${spring.application.name}/logs}
+  path: ${LOGGING_PATH:${user.home}/.oss/${spring.application.name}/logs}
   level:
     jndi: ${LOGGING_LEVEL_:INFO}
     com.zaxxer.hikari.pool: ${LOGGING_LEVEL_:INFO}
